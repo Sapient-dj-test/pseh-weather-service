@@ -26,12 +26,6 @@ pipeline{
             }
         }
 
-        stage('Deploy & Run Stage'){
-            steps{
-                sshagent(['aws_dev_ssh']) {
-                    sh "ssh -o StrictHostKeyChecking=no ubuntu@18.222.224.62 docker run -p 8080:8080 -d --name forecast-services ${imageName}"
-                }
-            }
-        }
+
     }
 }
