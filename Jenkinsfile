@@ -19,7 +19,7 @@ pipeline{
                 echo "Pushing Image : ${imageName}"
                 script {
                     docker.withRegistry( '', registryCredential ) {
-                     dockerImage.push()
+                     sh "docker push deepj/pseh-weather:latest"
                     }
                 }
             }
