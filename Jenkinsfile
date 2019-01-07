@@ -10,6 +10,7 @@ pipeline{
         stage('Build Stage'){
             steps{
                 withMaven(maven: 'M3'){
+                    sh "chmod +x ./mvnw"
                     sh "./mvnw install dockerfile:build"
                 }
             }
